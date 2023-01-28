@@ -1,6 +1,6 @@
 kanna_package = {
     "bgpic": "kanna.gif",
-    "bgcolor": None,
+    "bg_color": None,
     "ball_pencolor": "red",
     "balL_fillcolor": "purple",
     "ball_outline": 3,
@@ -12,7 +12,7 @@ kanna_package = {
 
 orangeblue = {
     "bgpic": None,
-    "bgcolor": "purple",
+    "bg_color": "purple",
     "ball_pencolor": "red",
     "balL_fillcolor": "red",
     "ball_outline": 3,

@@ -4,7 +4,7 @@ import turtle as t
 class Scorekeeper(t.Turtle):
     def __init__(self, x, y, preset = None):
         super().__init__()
-        self.size = 40
+        self.size = 60
         self.font = ('Comic Sans', self.size, 'bold')
         self.color = "white"
 

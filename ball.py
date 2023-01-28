@@ -16,7 +16,7 @@ class Ball:
         self.speed = 2
         self.min_speed = 1.5
         self.increment = 0.5
-        self.size = 1
+        self.size = 2
         self.movable = True
 
         self.start_time = None
@@ -51,14 +51,14 @@ class Ball:
     def collision_wall(self):
         collision = False
         # upper wall
-        if HEIGHT / 2 - self.body.ycor() <= 10 and 0 < self.body.heading() < 180:
+        if HEIGHT / 2 - self.body.ycor() <= (self.size*10) and 0 < self.body.heading() < 180:
             collision = True
             reverse_initial = (self.body.heading() + 180) % 360
             theta = 270 - reverse_initial
             self.body.setheading(reverse_initial + 2 * theta)
 
         # lower wall
-        if self.body.ycor() + HEIGHT / 2 <= 10 and 180 < self.body.heading() < 360:
+        if self.body.ycor() + HEIGHT / 2 <= (self.size*10) and 180 < self.body.heading() < 360:
             collision = True
             reverse_initial = (self.body.heading() + 180) % 360
             theta = 90 - reverse_initial

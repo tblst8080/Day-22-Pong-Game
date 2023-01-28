@@ -11,7 +11,7 @@ class LineMaker(t.Turtle):
         self.penup()
         self.hideturtle()
         self.pencolor("white")
-        self.pensize(3)
+        self.pensize(8)
         self.speed("fastest")
 
     def vertical(self, height):
@@ -28,7 +28,7 @@ class LineMaker(t.Turtle):
 
 
 class ScreenMaker:
-    def __init__(self, preset = None):
+    def __init__(self, preset=None):
         self.width = WIDTH
         self.height = HEIGHT
         self.screen = t.Screen()
@@ -41,14 +41,12 @@ class ScreenMaker:
         except:
             pass
         try:
-            self.screen.bgcolor(preset["bgcolor"])
+            self.screen.bgcolor(preset["bg_color"])
         except:
             pass
-
 
     def draw_middle_line(self):
         new_line = LineMaker()
         new_line.vertical(height=self.height)
 
     # def animate(self):
-
