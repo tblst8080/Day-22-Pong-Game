@@ -28,15 +28,27 @@ class LineMaker(t.Turtle):
 
 
 class ScreenMaker:
-    def __init__(self):
+    def __init__(self, preset = None):
         self.width = WIDTH
         self.height = HEIGHT
         self.screen = t.Screen()
         self.screen.bgcolor(BG_COLOR)
         self.screen.setup(width=self.width, height=self.height)
-        self.screen.title(titlestring="Welcome to the Pong Game")  # Screen title
+        self.screen.title(titlestring="Welcome to the Pong Game!")  # Screen title
+
+        try:
+            self.screen.bgpic(preset["bgpic"])
+        except:
+            pass
+        try:
+            self.screen.bgcolor(preset["bgcolor"])
+        except:
+            pass
+
 
     def draw_middle_line(self):
         new_line = LineMaker()
         new_line.vertical(height=self.height)
-        # new_line.horizontal(width=self.width, height=self.height)
+
+    # def animate(self):
+
