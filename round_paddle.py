@@ -19,7 +19,7 @@ controls_right = {
 
 
 class Paddle:
-    def __init__(self, side):
+    def __init__(self, side, preset = None):
         self.maxspeed = 6
         self.minspeed = 1
         self.diminish = 0.3
@@ -54,15 +54,21 @@ class Paddle:
         self.starting_point = (self.origin[side][0], 0)
 
         self.paddle = t.Turtle(shape="circle", visible=False)
-        self.paddle.color("white")
         self.paddle.shapesize(self.size)
         self.paddle.penup()
         self.paddle.goto(self.starting_point)
         self.paddle.showturtle()
-
+        self.paddle.fillcolor("white")
+        self.paddle.pen(outline=3, pencolor="white")
         self.shadow = t.Turtle(shape="circle", visible=False)
         self.shadow.penup()
         self.shadow.goto(self.origin[side][0], 0)
+
+        try:
+            self.paddle.fillcolor(preset['paddle_fillcolor'])
+            self.paddle.pen(outline = preset['paddle_outline'], pencolor=preset['paddle_pencolor'])
+        except:
+            pass
 
     def single_motion(self, direct):
         if direct == "l":
